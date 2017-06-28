@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MyMoviewReview</string>
+    <string name="menu_popular">Popular Movies</string>
+    <string name="menu_topRate">Top Rated Movies</string>
+    <string name="top_Rated_identifier">popular</string>
+    <string name="most_popular_identifier">top_rated</string>
+    <string name="error">Error Gathering Data.</string>
+    <string name="title_activity_movie_details">MovieDetailsActivity</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
