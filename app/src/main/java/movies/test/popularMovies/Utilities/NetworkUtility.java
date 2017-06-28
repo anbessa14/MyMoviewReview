@@ -16,9 +16,9 @@ import java.util.Scanner;
 public class NetworkUtility
 {
 
-   private final static String API_KEY = "68a7db991b43f986439d6554c32556ec";
-    final static String PARAM_LANGUAGE="language=en-US";
-    final static String PARAM_PAGE="page=2";
+   private  static  final String API_KEY = "";
+     static final String PARAM_LANGUAGE="language=en-US";
+     static final String  PARAM_PAGE="page=2";
 
 
     public static URL getPopularMovieURL() {
