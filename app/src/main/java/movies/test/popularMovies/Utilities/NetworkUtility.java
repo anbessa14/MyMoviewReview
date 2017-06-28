@@ -17,8 +17,6 @@ public class NetworkUtility
 {
 
    private  static  final String API_KEY = "";
-     static final String PARAM_LANGUAGE="language=en-US";
-     static final String  PARAM_PAGE="page=2";
 
 
     public static URL getPopularMovieURL() {
