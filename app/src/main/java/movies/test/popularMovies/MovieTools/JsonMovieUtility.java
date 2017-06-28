@@ -1,5 +1,7 @@
 package movies.test.popularMovies.MovieTools;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,10 +22,9 @@ public  final class JsonMovieUtility {
 
 
     private static String [] movieJsonResult;
-    private static final String MESSAGE_IDENTIFIER = "cod";
     private static final String DATA_CONTAINER = "results";
     private static final String MOVIE_POSTER="poster_path";
-    private static final String MOVIE_TITTLE="title";
+
 
 
 
@@ -54,31 +55,6 @@ public  final class JsonMovieUtility {
 
     }
 
-    private static  void setMovieListURL(JSONArray jsonMovieArray)
-    {
-        movieJsonResult = new String[jsonMovieArray.length()];
-
-        for (int i = 0; i < jsonMovieArray.length(); i++)
-        {
-            try
-            {
-                movieJsonResult[i] =  jsonMovieArray.getJSONObject(i).getString(MOVIE_POSTER);
-            } catch (JSONException e) {
-                e.printStackTrace();
-                movieJsonResult = null;
-            }
-        }
-
-    }
-
-    public static String [] getMovieImageList()
-    {
-        if (movieJsonResult != null)
-        {
-            return movieJsonResult;
-        }
-        return null;
-    }
 
     public static MoviePojo getMovieFromJSON(JSONObject movieJSON){
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -98,7 +74,7 @@ public  final class JsonMovieUtility {
             return movie;
         }
         catch (JSONException | ParseException e){
-
+            Log.d(JsonMovieUtility.class.getName(),e.toString());
         }
 
         return null;

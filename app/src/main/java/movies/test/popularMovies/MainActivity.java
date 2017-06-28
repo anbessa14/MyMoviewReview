@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity  implements MovieDetailsClic
     @Override
     public void onMoviePosterClick(MoviePojo moviePojo) {
         Intent intent = new Intent( this ,MovieDetailsActivity.class);
-        intent.putExtra(Constants.intentMovieIdentifier,moviePojo);
+        intent.putExtra(Constants.INTENT_MOVIE_IDENTIFIER,moviePojo);
         startActivity(intent);
 
     }
@@ -154,8 +154,7 @@ public class MainActivity extends AppCompatActivity  implements MovieDetailsClic
 
 
             } catch (Exception e) {
-                e.printStackTrace();
-                displayError();
+                Log.d(MainActivity.class.getName(),e.toString());
                 return null;
             }
         }
@@ -163,7 +162,13 @@ public class MainActivity extends AppCompatActivity  implements MovieDetailsClic
         @Override
         protected void onPostExecute(ArrayList<MoviePojo> moviePojoArrayList) {
             super.onPostExecute(moviePojoArrayList);
-            displayMovies(moviePojoArrayList);
+            if(moviePojoArrayList != null) {
+
+                displayMovies(moviePojoArrayList);
+            } else
+                {
+                    displayError();
+                }
 
         }
     }

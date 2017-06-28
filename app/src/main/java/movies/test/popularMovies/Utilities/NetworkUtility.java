@@ -1,6 +1,7 @@
 package movies.test.popularMovies.Utilities;
 
 import android.net.Uri;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,7 +30,7 @@ public class NetworkUtility
         try {
             url = new URL(builtUri.toString());
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            Log.d(NetworkUtility.class.getName(),e.toString());
         }
 
         return url;
@@ -44,7 +45,8 @@ public class NetworkUtility
         try {
             url = new URL(builtUri.toString());
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+
+            Log.d( NetworkUtility.class.getName(),e.toString());
         }
 
         return url;

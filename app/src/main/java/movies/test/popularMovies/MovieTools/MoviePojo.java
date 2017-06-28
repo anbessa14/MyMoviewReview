@@ -9,9 +9,9 @@ import java.util.Date;
 
 public class MoviePojo implements Serializable{
 
-    public int votes;
-    public long id;
-    public Date releaseDate;
+    public int    votes;
+    public long   id;
+    public Date   releaseDate;
     public double voteAvg;
     public double popularity;
     public String title;
